@@ -24,7 +24,7 @@ export const galleryImages = [
     caption: "Zamonaviy dars jarayoni",
   },
   {
-    src: "https://images.unsplash.com/photo-1523050854058-8df90110c9f1",
+    src: "https://images.unsplash.com/photo-1541339907198-e08756dedf3f",
     alt: "Bitiruvchilar tantanali marosimida",
     caption: "Bitiruv bayrami",
   },

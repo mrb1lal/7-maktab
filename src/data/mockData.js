@@ -100,10 +100,10 @@ export const teachersData = [
 ];
 
 export const contactData = {
-  address: "Toshkent shahri, Mustaqillik ko'chasi 123-uy",
+  address: "Namangan shahri, Namangan viloyati, O'zbekiston",
   phone: "+998 71 234 56 78",
   email: "info@7maktab.uz",
   workHours: "Dushanba—Shanba: 08:00 — 18:00",
   mapEmbedUrl:
-    "https://maps.google.com/maps?q=Tashkent%20Mustaqillik%20street&t=&z=13&ie=UTF8&iwloc=&output=embed",
+    "https://maps.google.com/maps?q=XMX8%2BF95%20Namangan%20Namangan%20Region%20Uzbekistan&t=&z=15&ie=UTF8&iwloc=&output=embed",
 };

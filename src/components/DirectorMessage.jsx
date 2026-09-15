@@ -40,7 +40,7 @@ export default function DirectorMessage() {
             <div className="relative overflow-hidden rounded-2xl border border-slate-200 shadow-xl shadow-slate-200/60">
               <Image
                 src={directorData.image}
-                alt={directorData.name}
+                alt={directorData.position}
                 width={480}
                 height={560}
                 className="aspect-[4/5] h-auto w-full object-cover"
@@ -51,7 +51,7 @@ export default function DirectorMessage() {
                 <Award size={18} />
               </span>
               <div>
-                <p className="text-sm font-bold text-ink">{directorData.name}</p>
+                <p className="text-sm font-bold text-ink">Direktor</p>
                 <p className="text-xs text-slate-500">{directorData.position}</p>
               </div>
             </div>
@@ -82,9 +82,6 @@ export default function DirectorMessage() {
               <figcaption className="mt-6 flex items-center gap-4 border-t border-slate-100 pt-6">
                 <div>
                   <p className="text-base font-bold text-ink">
-                    {directorData.name}
-                  </p>
-                  <p className="text-sm text-slate-500">
                     {directorData.position}
                   </p>
                 </div>

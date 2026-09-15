@@ -48,7 +48,6 @@ export const statisticsData = [
 ];
 
 export const directorData = {
-  name: "Bahodir To'ychiyev",
   position: "Maktab direktori",
   experience: "25 yillik pedagogik tajriba",
   image: "https://randomuser.me/api/portraits/men/43.jpg",
@@ -224,7 +223,7 @@ export const achievements = [
 
 export const contactData = {
   address: "Namangan shahri, Namangan viloyati, O'zbekiston",
-  phone: "+998 71 234 56 78",
+  phone: "+998 (69) 226-27-42",
   email: "info@7maktab.uz",
   workHours: "Dushanba—Shanba: 08:00 — 18:00",
   mapEmbedUrl:

@@ -6,6 +6,8 @@ import { AnimatePresence, motion } from "framer-motion";
 import { Award, GraduationCap, MapPin, X } from "lucide-react";
 import { achievements } from "@/data/mockData";
 
+const FILTERS = ["Barchasi", "IELTS", "Sport", "Dasturlash/IT"];
+
 const fadeUp = {
   hidden: { opacity: 0, y: 24 },
   visible: (delay = 0) => ({
@@ -16,7 +18,13 @@ const fadeUp = {
 };
 
 export default function Achievements() {
+  const [activeFilter, setActiveFilter] = useState("Barchasi");
   const [selected, setSelected] = useState(null);
+
+  const filtered =
+    activeFilter === "Barchasi"
+      ? achievements
+      : achievements.filter((a) => a.category === activeFilter);
 
   useEffect(() => {
     if (!selected) return;
@@ -35,7 +43,7 @@ export default function Achievements() {
   }, [selected]);
 
   return (
-    <section id="achievements" className="scroll-mt-16 bg-surface py-20 lg:py-28">
+    <section id="achievements" className="scroll-mt-16 bg-white py-20 lg:py-28">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <motion.div
           initial="hidden"
@@ -51,49 +59,87 @@ export default function Achievements() {
             Yutuqlarimiz va Sertifikatlar
           </h2>
           <p className="mt-5 text-slate-600">
-            O'quvchilarimizning olimpiadalar, sport musobaqalari va xalqaro
-            imtihonlardagi yorqin natijalari bilan faxrlanamiz.
+            O'quvchilarimizning IELTS, sport musobaqalari va dasturlash
+            olimpiadalaridagi yorqin natijalari bilan faxrlanamiz.
           </p>
         </motion.div>
 
-        <div className="mt-14 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">
-          {achievements.map((achievement, index) => (
-            <motion.article
-              key={achievement.id}
-              initial="hidden"
-              whileInView="visible"
-              viewport={{ once: true, amount: 0.2 }}
-              custom={index * 0.08}
-              variants={fadeUp}
-              whileHover={{ y: -8 }}
-              transition={{ type: "spring", stiffness: 300, damping: 20 }}
-              onClick={() => setSelected(achievement)}
-              className="group cursor-pointer overflow-hidden rounded-xl border border-slate-200 bg-white shadow-sm transition-shadow hover:shadow-lg hover:shadow-slate-200/70"
-            >
-              <div className="relative aspect-square overflow-hidden bg-slate-100">
-                <Image
-                  src={achievement.photo}
-                  alt={achievement.studentName}
-                  width={320}
-                  height={320}
-                  className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
-                />
-                <span className="absolute left-3 top-3 inline-flex items-center gap-1.5 rounded-full bg-ink/80 px-3 py-1 text-[11px] font-semibold text-white backdrop-blur-sm">
-                  <Award size={12} className="text-accent" />
-                  {achievement.achievementTitle}
-                </span>
-              </div>
+        <motion.div
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.6 }}
+          custom={0.15}
+          variants={fadeUp}
+          className="mt-10 flex flex-wrap items-center justify-center gap-2"
+        >
+          {FILTERS.map((filter) => {
+            const isActive = activeFilter === filter;
+            return (
+              <button
+                key={filter}
+                type="button"
+                onClick={() => setActiveFilter(filter)}
+                className={`relative rounded-full px-5 py-2 text-sm font-semibold transition-colors ${
+                  isActive
+                    ? "text-white"
+                    : "text-slate-600 hover:text-ink"
+                }`}
+              >
+                {isActive && (
+                  <motion.span
+                    layoutId="achievement-filter"
+                    className="absolute inset-0 rounded-full bg-ink shadow-sm"
+                    transition={{ type: "spring", stiffness: 400, damping: 32 }}
+                  />
+                )}
+                <span className="relative z-10">{filter}</span>
+              </button>
+            );
+          })}
+        </motion.div>
 
-              <div className="p-5">
-                <h3 className="text-base font-bold text-ink">
-                  {achievement.studentName}
-                </h3>
-                <p className="mt-0.5 text-sm text-slate-500">
-                  {achievement.class}
-                </p>
-              </div>
-            </motion.article>
-          ))}
+        <div className="mt-12 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">
+          <AnimatePresence>
+            {filtered.map((achievement) => (
+              <motion.article
+                key={achievement.id}
+                layout
+                initial={{ opacity: 0, scale: 0.9, y: 16 }}
+                animate={{ opacity: 1, scale: 1, y: 0 }}
+                exit={{ opacity: 0, scale: 0.85, y: -8 }}
+                transition={{ type: "spring", stiffness: 260, damping: 26 }}
+                whileHover={{ y: -8 }}
+                onClick={() => setSelected(achievement)}
+                className="group cursor-pointer overflow-hidden rounded-xl border border-slate-200 bg-white shadow-sm transition-shadow hover:shadow-lg hover:shadow-slate-200/70"
+              >
+                <div className="relative aspect-square overflow-hidden bg-slate-100">
+                  <Image
+                    src={achievement.photo}
+                    alt={achievement.studentName}
+                    width={320}
+                    height={320}
+                    className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
+                  />
+                  <span className="absolute left-3 top-3 inline-flex items-center gap-1.5 rounded-full bg-ink/80 px-3 py-1 text-[11px] font-semibold text-white backdrop-blur-sm">
+                    <Award size={12} className="text-accent" />
+                    {achievement.achievementTitle}
+                  </span>
+                </div>
+
+                <div className="p-5">
+                  <p className="text-[11px] font-bold uppercase tracking-widest text-accent">
+                    {achievement.category}
+                  </p>
+                  <h3 className="mt-1.5 text-base font-bold text-ink">
+                    {achievement.studentName}
+                  </h3>
+                  <p className="mt-0.5 text-sm text-slate-500">
+                    {achievement.class}
+                  </p>
+                </div>
+              </motion.article>
+            ))}
+          </AnimatePresence>
         </div>
       </div>
 
@@ -154,7 +200,11 @@ export default function Achievements() {
                     {selected.achievementTitle}
                   </span>
 
-                  <h3 className="text-balance mt-4 text-2xl font-bold tracking-tight text-ink">
+                  <p className="mt-3 text-[11px] font-bold uppercase tracking-widest text-slate-400">
+                    {selected.category}
+                  </p>
+
+                  <h3 className="text-balance mt-1 text-2xl font-bold tracking-tight text-ink">
                     {selected.studentName}
                   </h3>
                   <p className="mt-1 text-sm font-medium text-slate-500">

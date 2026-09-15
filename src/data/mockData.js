@@ -40,6 +40,22 @@ export const galleryImages = [
   },
 ];
 
+export const statisticsData = [
+  { label: "O'quvchilar", value: 4000, suffix: "+" },
+  { label: "O'qituvchilar", value: 250, suffix: "+" },
+  { label: "IELTS sertifikatlari", value: 320, suffix: "+" },
+  { label: "OTMga kirish", value: 98, suffix: "%" },
+];
+
+export const directorData = {
+  name: "Bahodir To'ychiyev",
+  position: "Maktab direktori",
+  experience: "25 yillik pedagogik tajriba",
+  image: "https://randomuser.me/api/portraits/men/43.jpg",
+  quote:
+    "Har bir bola — o'z ichida ulkan salohiyat olib yurgan yulduzdir. Bizning vazifamiz esa uning porlashiga qulay sharoit yaratish va ixlos bilan yo'l ko'rsatishdir.",
+};
+
 export const teachersData = [
   {
     id: 1,
@@ -106,6 +122,7 @@ export const achievements = [
     class: "11-A sinf",
     photo: "https://randomuser.me/api/portraits/men/11.jpg",
     achievementTitle: "IELTS 8.0",
+    category: "IELTS",
     learningCenter: "Namangan Zamon til markazi",
     address: "Namangan shahri, Guliston ko'chasi 14",
     certificateImage: "https://images.unsplash.com/photo-1523050854058-8df90110c9f1",
@@ -118,6 +135,7 @@ export const achievements = [
     class: "9-C sinf",
     photo: "https://randomuser.me/api/portraits/men/18.jpg",
     achievementTitle: "Futbol Chempioni",
+    category: "Sport",
     learningCenter: "Yoshlik sport o'quv markazi",
     address: "Namangan shahri, Boburshoh ko'chasi 5",
     certificateImage: "https://images.unsplash.com/photo-1560432881-33d2c27b1dcb",
@@ -129,24 +147,26 @@ export const achievements = [
     studentName: "Madina Raximova",
     class: "10-B sinf",
     photo: "https://randomuser.me/api/portraits/women/32.jpg",
-    achievementTitle: "Matematika olimpiadasi 1-o'rin",
-    learningCenter: "Bilimdon o'quv markazi",
+    achievementTitle: "Informatika olimpiadasi 1-o'rin",
+    category: "Dasturlash/IT",
+    learningCenter: "CodeCamp o'quv markazi",
     address: "Namangan shahri, Do'stlik ko'chasi 88",
-    certificateImage: "https://images.unsplash.com/photo-1598605272854-3351fa4d0c48",
+    certificateImage: "https://images.unsplash.com/photo-1518770660439-4636190af475",
     description:
-      "Madina respublika matematika olimpiadasining viloyat bosqichida 1-o'rinni qo'lga kiritib, terma jamoa tarkibiga kiritildi.",
+      "Madina informatika fanidan respublika olimpiadasining viloyat bosqichida 1-o'rinni qo'lga kiritib, dasturlash bo'yicha terma jamoa tarkibiga kiritildi.",
   },
   {
     id: 4,
     studentName: "Jasmina Ismoilova",
     class: "11-B sinf",
     photo: "https://randomuser.me/api/portraits/women/26.jpg",
-    achievementTitle: "Eng yaxshi bitiruvchi",
-    learningCenter: "Perfect English academy",
+    achievementTitle: "Dasturlash loyihalari tanlovi g'olibi",
+    category: "Dasturlash/IT",
+    learningCenter: "IT Academy Namangan",
     address: "Namangan shahri, Navoiy ko'chasi 3",
-    certificateImage: "https://images.unsplash.com/photo-1497486751821-4ac8503c1af7",
+    certificateImage: "https://images.unsplash.com/photo-1555066931-4365d14bab8c",
     description:
-      "Jasmina bitiruvchilar orasida eng yuqori ball to'plab, o'qituvchilar kengashining maxsus yorliq mukofotiga sazovor bo'ldi.",
+      "Jasmina o'quvchilar o'rtasidagi dasturlash loyihalari tanlovida yaratgan amaliy ilovasi bilan g'olib bo'lib, texnologik inkubator taklifiga ega chiqdi.",
   },
   {
     id: 5,
@@ -154,6 +174,7 @@ export const achievements = [
     class: "10-A sinf",
     photo: "https://randomuser.me/api/portraits/men/41.jpg",
     achievementTitle: "IELTS 7.5",
+    category: "IELTS",
     learningCenter: "Namangan Zamon til markazi",
     address: "Namangan shahri, Istiqlol ko'chasi 21",
     certificateImage: "https://images.unsplash.com/photo-1523050854058-8df90110c9f1",
@@ -165,12 +186,13 @@ export const achievements = [
     studentName: "Feruza Nazarova",
     class: "9-A sinf",
     photo: "https://randomuser.me/api/portraits/women/50.jpg",
-    achievementTitle: "Kimyodan olimpiada bronzasi",
-    learningCenter: "Olimpiada o'quv markazi",
+    achievementTitle: "IT-olimpiada bronza medali",
+    category: "Dasturlash/IT",
+    learningCenter: "Algorithm o'quv markazi",
     address: "Namangan shahri, Chorsu ko'chasi 12",
-    certificateImage: "https://images.unsplash.com/photo-1567078300394-f0ea2f76d37f",
+    certificateImage: "https://images.unsplash.com/photo-1587620962725-abab7fe55159",
     description:
-      "Feruza kimyo fanidan xalqaro olimpiadada bronza medal qo'lga kiritib, maktabimizning faxrli o'quvchilaridan biriga aylandi.",
+      "Feruza axborot texnologiyalari olimpiadasining respublika bosqichida bronza medal qo'lga kiritib, maktabimizning faxrli o'quvchilaridan biriga aylandi.",
   },
   {
     id: 7,
@@ -178,6 +200,7 @@ export const achievements = [
     class: "8-C sinf",
     photo: "https://randomuser.me/api/portraits/men/53.jpg",
     achievementTitle: "Shaxmat bo'yicha chempion",
+    category: "Sport",
     learningCenter: "Gambit shaxmat markazi",
     address: "Namangan shahri, Toshkent ko'chasi 47",
     certificateImage: "https://images.unsplash.com/photo-1576972405668-2d021a752419",
@@ -189,12 +212,13 @@ export const achievements = [
     studentName: "Zilola Qodirova",
     class: "11-A sinf",
     photo: "https://randomuser.me/api/portraits/women/44.jpg",
-    achievementTitle: "Insho tanlovi g'olibi",
-    learningCenter: "Ijod akademiyasi",
+    achievementTitle: "IELTS 7.0",
+    category: "IELTS",
+    learningCenter: "Perfect English academy",
     address: "Namangan shahri, Uychi ko'chasi 6",
-    certificateImage: "https://images.unsplash.com/photo-1456406644174-8ddd4cd52a06",
+    certificateImage: "https://images.unsplash.com/photo-1497486751821-4ac8503c1af7",
     description:
-      "Zilola 'Kelajak avlod' respublika insho tanlovida eng yaxshi ish muallifi sifatida taqdirlanib, ijodiy to'garaklarga taklif qilindi.",
+      "Zilola xalqaro IELTS imtihonida 7.0 ball to'plab, nufuzli ta'lim darulari talab qiladigan xalqaro sertifikatni qo'lga kiritdi.",
   },
 ];
 

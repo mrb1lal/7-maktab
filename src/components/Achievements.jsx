@@ -114,8 +114,8 @@ export default function Achievements() {
               >
                 <div className="relative aspect-square overflow-hidden bg-slate-100">
                   <Image
-                    src={achievement.photo}
-                    alt={achievement.studentName}
+                    src={achievement.certificateImage}
+                    alt={`${achievement.studentName} sertifikati`}
                     width={320}
                     height={320}
                     className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
@@ -171,27 +171,14 @@ export default function Achievements() {
               </button>
 
               <div className="grid grid-cols-1 md:grid-cols-2">
-                <div className="flex flex-col">
-                  <div className="relative aspect-square bg-slate-100">
-                    <Image
-                      src={selected.photo}
-                      alt={selected.studentName}
-                      fill
-                      sizes="(max-width: 768px) 100vw, 384px"
-                      className="object-cover"
-                    />
-                  </div>
-                  <div className="border-t border-slate-100">
-                    <div className="relative aspect-[4/3] bg-slate-100">
-                      <Image
-                        src={selected.certificateImage}
-                        alt={`${selected.studentName} sertifikati`}
-                        fill
-                        sizes="(max-width: 768px) 100vw, 384px"
-                        className="object-cover"
-                      />
-                    </div>
-                  </div>
+                <div className="relative aspect-square bg-slate-100">
+                  <Image
+                    src={selected.certificateImage}
+                    alt={`${selected.studentName} sertifikati`}
+                    fill
+                    sizes="(max-width: 768px) 100vw, 384px"
+                    className="object-cover"
+                  />
                 </div>
 
                 <div className="flex flex-col p-6 sm:p-7">
